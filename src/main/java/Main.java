@@ -8,14 +8,14 @@ import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
-        Driver driver;
-        driver=new com.mysql.cj.jdbc.Driver();
-        DriverManager.registerDriver(driver);
+
+      Driver driver=new com.mysql.cj.jdbc.Driver();
+      DriverManager.registerDriver(driver);
 
 
         ApiContextInitializer.init();
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
-        Botstart1 bot = new Botstart1();
+        BotStart bot = new BotStart();
         try {
             telegramBotsApi.registerBot(bot);
         } catch (TelegramApiRequestException e) {
