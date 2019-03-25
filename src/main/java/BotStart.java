@@ -193,12 +193,12 @@ public class BotStart extends TelegramLongPollingBot {
     @Override
     public String getBotUsername() {
 
-        return "Workrusbot";
+        return "";
     }
 
     @Override
     public String getBotToken() {
 
-        return "747090346:AAH6gMgwyN56KA5UfjQna-6RvgerrfjLCnA";
+        return "";
     }
 }
