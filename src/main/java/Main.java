@@ -7,7 +7,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Main {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, TelegramApiRequestException {
 
       Driver driver=new com.mysql.cj.jdbc.Driver();
       DriverManager.registerDriver(driver);
@@ -16,11 +16,7 @@ public class Main {
         ApiContextInitializer.init();
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
         BotStart bot = new BotStart();
-        try {
-            telegramBotsApi.registerBot(bot);
-        } catch (TelegramApiRequestException e) {
-            e.printStackTrace();
+        telegramBotsApi.registerBot(bot);
         }
-
     }
-}
+

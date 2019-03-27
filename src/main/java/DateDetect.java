@@ -3,7 +3,7 @@ public class DateDetect {
    static String yearD;
     static String monthD;
 
-    public static   void dateFind(String s) throws NumberFormatException{
+    public static void dateFind(String s) throws NumberFormatException{
 
 
 
