@@ -23,8 +23,10 @@ public class BotStart extends TelegramLongPollingBot {
 
 
         if (update.hasMessage() && update.getMessage().hasText()) {
+            String name=update.getMessage().getFrom().getFirstName();
+            name=name.replaceAll("[^\\w]"," ");
             long chatId = update.getMessage().getChatId();
-            executeText(update.getMessage().getFrom().getFirstName(), update.getMessage().getText(), message, chatId);
+            executeText(name, update.getMessage().getText(), message, chatId);
         }
 
         if (update.hasCallbackQuery()) {
