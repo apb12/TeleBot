@@ -20,11 +20,12 @@ public class BotStart extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
         SendMessage message = new SendMessage();
-
+        String name=update.getMessage().getFrom().getFirstName();
+        String names=name.replaceAll("[^\\w]","");
 
         if (update.hasMessage() && update.getMessage().hasText()) {
             long chatId = update.getMessage().getChatId();
-            executeText(update.getMessage().getFrom().getFirstName(), update.getMessage().getText(), message, chatId);
+            executeText(names, update.getMessage().getText(), message, chatId);
         }
 
         if (update.hasCallbackQuery()) {
