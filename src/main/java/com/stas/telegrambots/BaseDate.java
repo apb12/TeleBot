@@ -7,19 +7,8 @@ import java.util.Map;
 class BaseDate  {
 
    private static final String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net:3306/heroku_839483b01dcbc34?useUnicode=true&characterEncoding=UTF-8&useSSL=false";
-   private static final String name=;
-   private static final String password=;
-
-
-
-
-
-
-
-
-
-
-
+   private static final String name="b3fd7df0612459";
+   private static final String password="7ee5e40e";
 
 
     void update(String sql) throws SQLException  {
@@ -28,12 +17,7 @@ class BaseDate  {
            statement.executeUpdate(sql);
        }
        }
-
-
-
-
-
-        Map<Integer, String> getData(String sql) throws SQLException {
+       Map<Integer, String> getData(String sql) throws SQLException {
         Map<Integer, String> data = new HashMap<>();
         try (Connection con=DriverManager.getConnection(url,name,password);
                 Statement statement = con.createStatement()) {
