@@ -1,9 +1,11 @@
-public class DateDetect {
+package com.stas.telegrambots;
+
+class DateDetect {
    static String dayD;
    static String yearD;
     static String monthD;
 
-    public static void dateFind(String s) throws NumberFormatException{
+    static void dateFind(String s) throws NumberFormatException {
 
 
 

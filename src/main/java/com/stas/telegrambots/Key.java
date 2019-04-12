@@ -1,3 +1,5 @@
+package com.stas.telegrambots;
+
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 
 public interface Key {

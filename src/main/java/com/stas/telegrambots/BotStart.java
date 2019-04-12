@@ -1,3 +1,5 @@
+package com.stas.telegrambots;
+
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -13,19 +15,20 @@ public class BotStart extends TelegramLongPollingBot {
 
      private BaseDate baseDate;
 
-    public BotStart() {
+    BotStart() {
         baseDate=new BaseDate();
     }
 
     @Override
     public void onUpdateReceived(Update update) {
         SendMessage message = new SendMessage();
-        String name=update.getMessage().getFrom().getFirstName();
-        String names=name.replaceAll("[^\\w]","");
+
 
         if (update.hasMessage() && update.getMessage().hasText()) {
+            String name=update.getMessage().getFrom().getFirstName();
+            name=name.replaceAll("[^\\w]"," ");
             long chatId = update.getMessage().getChatId();
-            executeText(names, update.getMessage().getText(), message, chatId);
+            executeText(name, update.getMessage().getText(), message, chatId);
         }
 
         if (update.hasCallbackQuery()) {
